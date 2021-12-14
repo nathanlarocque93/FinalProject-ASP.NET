@@ -1,0 +1,61 @@
+﻿@model NonProfit.Models.NonProfitDonation
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>NonProfitDonation</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.amount)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.amount)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.creditcard)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.creditcard)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.city)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.city)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.street)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.street)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.postalcode)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.postalcode)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.date)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.date)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NonProfitDonator)
+            @Html.DisplayNameFor(model => model.NonProfitDonator.donatorID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NonProfitDonator.donatorID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.donationID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

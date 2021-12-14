@@ -1,0 +1,72 @@
+﻿@model IEnumerable<NonProfit.Models.NonProfitDonation>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.creditcard)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.city)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.street)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.postalcode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NonProfitDonator)
+                @Html.DisplayNameFor(model => model.NonProfitDonator.donatorID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.creditcard)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.city)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.street)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.postalcode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NonProfitDonator.donatorID)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.donationID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.donationID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.donationID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
